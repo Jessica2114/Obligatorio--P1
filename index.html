@@ -13,16 +13,21 @@
     <nav>
       <ul id="navPrincipal">
         <li>
-          <a>Sección 1</a>
+          <a>Ofertas </a>
         </li>
         <li>
-          <a>Sección 2</a>
+          <a>Destinos </a>
         </li>
         <li>
-          <a>Sección 3</a>
+          <a>Mis reservas</a>
         </li>
         <li>
-          <a>Sección 4</a>
+          <a>Millas :
+            400 ✈
+          </a> <br>
+          <a>Saldo :
+            13000 
+          </a>
         </li>
       </ul>
     </nav>
@@ -60,13 +65,360 @@
       <input type="number" id="txtNumero"/>
       <input type="button" value="Registrarme" /><br />
 
+      <!-- DESTINOS DISPONIBLES -->
+      <h3>Destinos disponibles</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Precio</th>
+          <th>Imagen</th>
+          <th>Cupos disponibles</th>
+          
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            Destino 1
+          </td>
+          <td>$6890</td>
+          <td><img src="https://place-hold.it/100x100/aaa/imagen.jpg" alt="prueba"></td>
+          <td>
+            10
+          </td>
+          
+          <td>
+            <input type="button" value="Reservar" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Destino 2
+          </td>
+          <td>$2500</td>
+          <td><img src="https://place-hold.it/100x100/aaa/imagen.jpg" alt="prueba"></td>
+          <td>
+            10
+          </td>
+          
+          <td>
+            <input type="button" value="Reservar" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Destino 3
+          </td>
+          <td>$1600</td>
+          <td><img src="https://place-hold.it/100x100/aaa/imagen.jpg" alt="prueba"></td>
+          <td>
+            5
+          </td>
+        
+          <td>
+            <input type="button" value="Reservar" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
+    <!-- DETALLE DE RESERVA -->
+    <h1>Destino 1</h1>
+    
+    <img src="https://place-hold.it/100x100/aaa/imagen.jpg" alt="prueba"> <br>
+    <p>Descripción + Precio $</p>
+    <label for="txtNumber">Cantidad de personas</label> <br>
+    <input type="number" id="txtNumber">
+    <label for="slcOpciones">Seleccionar metodo de pago</label>
+    <select id="slcOpciones">
+      <option value="1">Seleccionar...</option>
+      <option value="2">Dinero </option>
+      <option value="3">Millas</option>
+    </select>
+    <input type="button" value="Confirmar reserva" />
 
+    <!-- HISTORIAL DE RESERVAS -->
+    <h3>Mis reservas</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Total pagado</th>
+          <th>Imagen</th>
+          <th>Cantidad de personas</th>
+          <th>Estado</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            Destino 1
+          </td>
+          <td>$6890</td>
+          <td><img src="https://place-hold.it/100x100/aaa/imagen.jpg" alt="prueba"></td>
+          <td>2</td>
+          <td>Pendiente</td>
+          <td>
+            <input type="button" value="Cancelar" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Destino 2
+          </td>
+          <td>$2500</td>
+          <td><img src="https://place-hold.it/100x100/aaa/imagen.jpg" alt="prueba"></td>
+          <td>1</td>
+          <td>Cancelado</td>
+          <td>
+            <input type="button" value="Cancelar" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Destino 3
+          </td>
+          <td>$1600</td>
+          <td><img src="https://place-hold.it/100x100/aaa/imagen.jpg" alt="prueba"></td>
+          <td>5</td>
+          <td>Aprobado</td>
+          <td>
+            <input type="button" value="Cancelar" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
+    <!-- Destinos en ofertas -->
+    <h3>Ofertas</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Oferta</th>
+          <th>Nombre</th>
+          <th>Precio</th>
+          <th>Imagen</th>
+          <th>Cupos disponibles</th>
+          
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>⭐</td>
+          <td>
+            Destino 1
+          </td>
+          <td>$6890</td>
+          <td><img src="https://place-hold.it/100x100/aaa/imagen.jpg" alt="prueba"></td>
+          <td>
+            10
+          </td>
+          
+          <td>
+            <input type="button" value="Reservar" />
+          </td>
+        </tr>
+        <tr>
+          <td>⭐</td>
+          <td>
+            Destino 2
+          </td>
+          <td>$2500</td>
+          <td><img src="https://place-hold.it/100x100/aaa/imagen.jpg" alt="prueba"></td>
+          <td>
+            10
+          </td>
+          
+          <td>
+            <input type="button" value="Reservar" />
+          </td>
+        </tr>
+        <tr>
+          <td>⭐</td>
+          <td>
+            Destino 3
+          </td>
+          <td>$1600</td>
+          <td><img src="https://place-hold.it/100x100/aaa/imagen.jpg" alt="prueba"></td>
+          <td>
+            5
+          </td>
+        
+          <td>
+            <input type="button" value="Reservar" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
+    <!-- ************************ADMINISTRADOR ************************************* -->
 
+    <!-- Listar y aprobar reservas o cancelar reservas -->
+    <h3>Reservas pendientes</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>ID Reserva</th>
+          <th>Nombre</th>
+          <th>Total pagado</th>
+          <th>ID Cliente</th>
+          <th>Cantidad de personas</th>
+          <th>Estado</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>R001</td>
+          <td>
+            Destino 1
+          </td>
+          <td>$6890</td>
+          <td>C010</td>
+          <td>2</td>
+          <td>Pendiente</td>
+          <td>
+            <input type="button" value="Aprobar" />
+            <input type="button" value="Cancelar" />
+          </td>
+        </tr>
+        <tr>
+          <td>R002</td>
+          <td>
+            Destino 2
+          </td>
+          <td>$2500</td>
+          <td>C012</td>
+          <td>1</td>
+          <td>Pendiente</td>
+          <td>
+            <input type="button" value="Aprobar" />
+            <input type="button" value="Cancelar" />
+          </td>
+        </tr>  
+      </tbody>
+    </table>
+    <h3>Reservas aprobadas</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>ID Reserva</th>
+          <th>Nombre</th>
+          <th>Total pagado</th>
+          <th>ID Cliente</th>
+          <th>Cantidad de personas</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>R001</td>
+          <td>
+            Destino 1
+          </td>
+          <td>$6890</td>
+          <td>C010</td>
+          <td>2</td>
+          <td>Aprobado</td>
+        </tr>
+        <tr>
+          <td>R002</td>
+          <td>
+            Destino 2
+          </td>
+          <td>$2500</td>
+          <td>C012</td>
+          <td>1</td>
+          <td>Aprobado</td>
+        </tr>  
+      </tbody>
+    </table>
+    <h3>Reservas canceladas</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>ID Reserva</th>
+          <th>Nombre</th>
+          <th>Total pagado</th>
+          <th>ID Cliente</th>
+          <th>Cantidad de personas</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>R004</td>
+          <td>
+            Destino 1
+          </td>
+          <td>$6890</td>
+          <td>C013</td>
+          <td>2</td>
+          <td>Cancelado</td>
+        </tr>
+        <tr>
+          <td>R003</td>
+          <td>
+            Destino 2
+          </td>
+          <td>$2500</td>
+          <td>C015</td>
+          <td>1</td>
+          <td>Cancelado</td>
+        </tr>  
+      </tbody>
+    </table>
 
+    <!-- Agregar destinos -->
 
+    <h1>Agregar nuevo destino</h1>
+    <label for="txtTexto">Nombre del destino</label> <br>
+    <input type="text" id="txtTexto">
+    <label for="txtNumber">Precio por persona</label> <br>
+    <input type="number" id="txtNumber">
+    <label for="txtTexto">Descripción</label> <br>
+    <input type="text" id="txtTexto">
+    <label for="imagen">Sube una imagen:</label>
+    <input type="file" id="imagen" name="imagen" accept="image/*">
+    <input type="submit" value="Subir imagen">
+    <label for="txtNumber">Cantidad de cupos</label> 
+    <input type="number" id="txtNumber">
+    <input type="button" value="Agregar" />
+
+    <!-- Informe de ganancias  -->
+    <h3>Informe de ganancias</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Destino</th>
+                <th>Cantidad de Personas</th>
+                <th>Ganancias ($)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Destino 1</td>
+                <td>10</td>
+                <td>$30</td>
+            </tr>
+            <tr>
+                <td>Destino 2</td>
+                <td>8</td>
+                <td>$200</td>
+            </tr>
+            <tr>
+                <td>Destino 3</td>
+                <td>50</td>
+                <td>$150</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p><strong>TOTAL GANANCIAS: $380</strong></p>
 
       <!-- TITULOS -->
       <h1>Titulo 1</h1>
@@ -130,6 +482,7 @@
 
       </tbody>
     </table>
+
 
     <p>
       Donec dapibus arcu a diam commodo, vel vehicula orci volutpat.
