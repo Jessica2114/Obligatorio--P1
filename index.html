@@ -174,7 +174,7 @@
           <td>1</td>
           <td>Cancelado</td>
           <td>
-            <input type="button" value="Cancelar" />
+            <input type="button" value="Cancelar" disabled />
           </td>
         </tr>
         <tr>
@@ -186,7 +186,7 @@
           <td>5</td>
           <td>Aprobado</td>
           <td>
-            <input type="button" value="Cancelar" />
+            <input type="button" value="Cancelar" disabled/>
           </td>
         </tr>
       </tbody>
@@ -282,8 +282,7 @@
           <td>2</td>
           <td>Pendiente</td>
           <td>
-            <input type="button" value="Aprobar" />
-            <input type="button" value="Cancelar" />
+            <input type="button" value="Procesar reserva" />
           </td>
         </tr>
         <tr>
@@ -296,8 +295,7 @@
           <td>1</td>
           <td>Pendiente</td>
           <td>
-            <input type="button" value="Aprobar" />
-            <input type="button" value="Cancelar" />
+            <input type="button" value="Procesar reserva" />
           </td>
         </tr>  
       </tbody>
@@ -382,12 +380,60 @@
     <input type="number" id="txtNumber">
     <label for="txtTexto">Descripción</label> <br>
     <input type="text" id="txtTexto">
-    <label for="imagen">Sube una imagen:</label>
-    <input type="file" id="imagen" name="imagen" accept="image/*">
-    <input type="submit" value="Subir imagen">
+    <label for="imagen">URL de la imagen:</label>
+    <input type="url" id="website" name="website" placeholder="https://ejemplo.com">
     <label for="txtNumber">Cantidad de cupos</label> 
     <input type="number" id="txtNumber">
     <input type="button" value="Agregar" />
+
+      <!-- Modificar destinos -->
+      <h3>Modificar destinos</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>ID Destino</th>
+            <th>Nombre</th>
+            <th>Cupos</th>
+            <th>Activo/Pausado</th>
+            <th>En oferta</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ID 1</td>
+            <td>Destino 1</td>
+            <td>  <input type="number"></td>
+            <td><select id="slcActivoInactivo">
+              <option value="n">Seleccionar...</option>
+              <option value="a">Activar</option>
+              <option value="i">Pausar</option>
+            </select></td>
+            <td><input type="checkbox" name="opcion1" value="opcion1"></td>
+            <td>
+              <input type="button" value="Modificar" />
+            </td>
+          </tr>
+          <tr>
+            <td>ID 2</td>
+            <td>Destino 2</td>
+            <td><input type="number"></td>
+            <td><select id="slcActivoInactivo">
+              <option value="n">Seleccionar...</option>
+              <option value="a">Activar</option>
+              <option value="i">Pausar</option>
+            </select></td>
+            <td><input type="checkbox" name="opcion1" value="opcion1"></td>
+            <td>
+              <input type="button" value="Modificar" />
+            </td>
+          </tr>
+  
+        </tbody>
+      </table>
+  
+  
+ 
 
     <!-- Informe de ganancias  -->
     <h3>Informe de ganancias</h3>
