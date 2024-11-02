@@ -6,37 +6,49 @@
     <title>Agencia de viajes</title>
 </head>
 <body>
-    <!-- REGISTRO -->
-    <h2>Registrarse</h2>
-    <label for="txtNombreCliente">Nombre</label>
-    <input type="text" id="txtNombreCliente" />
-    <label for="txtApellidoCliente">Apellido</label>
-    <input type="text" id="txtApellidoCliente" />
-    <label for="txtNombreUsuario">Nombre de usuario:</label>
-    <input type="text" id="txtNombreUsuario" />
-    <label for="txtContrasenaRegistro">Contraseña</label>
-    <input type="text" id="txtContrasenaRegistro" />
-    <label for="txtNumeroTarjeta">Numero de tarjeta de credito</label>
-    <input type="number" id="txtNumeroTarjeta"> 
-    <label for="txtNumeroCVC">CVC</label>
-    <input type="number" id="txtNumeroCVC"/>
-    <input type="button" value="Registrarme" /><br />
+    <div id="contenedor">
+        <!-- REGISTRO -->
+        <main>
+            <section id="secRegistroUsuario" class="seccion">
+                <h2>Registrarse</h2>
+                <label for="txtNombreCliente">Nombre</label>
+                <input type="text" id="txtNombreCliente">
+                <label for="txtApellidoCliente">Apellido</label>
+                <input type="text" id="txtApellidoCliente">
+                <label for="txtNombreUsuario">Nombre de usuario:</label>
+                <input type="text" id="txtNombreUsuario">
+                <label for="txtContrasenaRegistro">Contraseña</label>
+                <input type="text" id="txtContrasenaRegistro" />
+                <label for="txtNumeroTarjeta">Numero de tarjeta de credito</label>
+                <input type="number" id="txtNumeroTarjeta"> 
+                <label for="txtNumeroCVC">CVC</label>
+                <input type="number" id="txtNumeroCVC">
+                <input type="button" id="btnRegistroUsuario" data-refSec="secRegistroUsuario" class="btnSeccion" value="Registrarme"> 
+                <br>
+            </section>
 
-     <!-- LOGIN -->
-     <h2>Iniciar sesión</h2>
-     <label for="txtUsuario">Usuario</label>
-     <input type="text" id="txtUsuario" />
-     <label for="txtContrasenia">Contraseña</label>
-     <input type="text" id="txtContrasenia" />
-     <label for="slcOpciones">Elegir tipo de usuario</label>
-     <select id="slcOpciones">
-       <option value="#">Seleccionar...</option>
-       <option value="C">Cliente</option>
-       <option value="A">Administrador</option>
-     </select>
-     <p id="pMostrarMensajeLogin"></p>
-     <input type="button" value="Ingresar" /><br />
+            <!-- LOGIN -->
+            <section id="secLoginUsuario" class="seccion">
+                <h2>Iniciar sesión</h2>
+                <label for="txtUsuario">Usuario</label>
+                <input type="text" id="txtUsuario">
+                <label for="txtContrasenia">Contraseña</label>
+                <input type="text" id="txtContrasenia">
+                <label for="slcOpciones">Elegir tipo de usuario</label>
+                <select id="slcOpciones">
+                <option value="#">Seleccionar...</option>
+                <option value="C">Cliente</option>
+                <option value="A">Administrador</option>
+                </select>
+                <p id="pMostrarMensajeLogin"></p>
+                <input type="button" id="btnLoginUsuario" data-refSec="secLoginUsuario" class="btnSeccion" value="Ingresar">
+                <br>
+            </section>
 
+
+            
+        </main>
+    </div>
     <script src="./scripts/sistema.js"></script>
     <script src="./scripts/cliente.js"></script>
     <script src="./scripts/destino.js"></script>
