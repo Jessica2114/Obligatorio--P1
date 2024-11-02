@@ -22,6 +22,21 @@
     <input type="number" id="txtNumeroCVC"/>
     <input type="button" value="Registrarme" /><br />
 
+     <!-- LOGIN -->
+     <h2>Iniciar sesión</h2>
+     <label for="txtUsuario">Usuario</label>
+     <input type="text" id="txtUsuario" />
+     <label for="txtContrasenia">Contraseña</label>
+     <input type="text" id="txtContrasenia" />
+     <label for="slcOpciones">Elegir tipo de usuario</label>
+     <select id="slcOpciones">
+       <option value="#">Seleccionar...</option>
+       <option value="C">Cliente</option>
+       <option value="A">Administrador</option>
+     </select>
+     <p id="pMostrarMensajeLogin"></p>
+     <input type="button" value="Ingresar" /><br />
+
     <script src="./scripts/sistema.js"></script>
     <script src="./scripts/cliente.js"></script>
     <script src="./scripts/destino.js"></script>
