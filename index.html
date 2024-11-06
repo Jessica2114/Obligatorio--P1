@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agencia de viajes</title>
+    <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
     <div id="contenedor">
         <!-- REGISTRO -->
         <main>
-            <section id="secRegistroUsuario" class="seccion">
+            <section id="secRegistroUsuario" class="preLogin">
                 <h2>Registrarse</h2>
                 <label for="txtNombreCliente">Nombre</label>
                 <input type="text" id="txtNombreCliente">
@@ -23,12 +24,12 @@
                 <input type="number" id="txtNumeroTarjeta"> 
                 <label for="txtNumeroCVC">CVC</label>
                 <input type="number" id="txtNumeroCVC">
-                <input type="button" id="btnRegistroUsuario" data-refSec="secRegistroUsuario" class="btnSeccion" value="Registrarme"> 
+                <input type="button" id="btnRegistroUsuario" value="Registrarme"> 
                 <br>
             </section>
 
             <!-- LOGIN -->
-            <section id="secLoginUsuario" class="seccion">
+            <section id="secLoginUsuario" class="preLogin">
                 <h2>Iniciar sesión</h2>
                 <label for="txtUsuario">Usuario</label>
                 <input type="text" id="txtUsuario">
@@ -41,12 +42,13 @@
                 <option value="A">Administrador</option>
                 </select>
                 <p id="pMostrarMensajeLogin"></p>
-                <input type="button" id="btnLoginUsuario" data-refSec="secLoginUsuario" class="btnSeccion" value="Ingresar">
+                <input type="button" id="btnLoginUsuario" value="Ingresar">
+                <a href="" id="btnGenerarRegistro">Registrarme</a>
                 <br>
             </section>
 
 
-            
+
         </main>
     </div>
     <script src="./scripts/sistema.js"></script>
