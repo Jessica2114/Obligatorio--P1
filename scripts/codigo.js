@@ -3,12 +3,36 @@ let sistema = new Sistema();
 // EVENTOS CLICK
 document.querySelector("#btnLoginUsuario").addEventListener("click", login);
 document.querySelector("#btnRegistroUsuario").addEventListener("click",registrar);
+document.querySelector("#btnCerrarSesion").addEventListener("click",cerrarSesion);
+// document.querySelector("#btnMostrarRegistro").addEventListener("click",mostrarFormRegistro )
+
+// OCULTAR / MOSTRAR 
 
 
-// MOSTRAR / OCULTAR 
+ocultarSecciones(); 
+
+function ocultarSecciones(){
+    let secciones = document.querySelectorAll(".seccion")
+    for(let seccion of secciones){
+        seccion.style.display = "none"
+    }
+}
+
+function cambiarDisplayClase(clase,display){
+    let sec = document.querySelectorAll(`.${clase}`)
+    for(let s of sec){
+        s.style.display = display
+    }
+}
+
 
 /* REGISTRO */
-
+/* function mostrarFormRegistro (){
+    cambiarDisplayClase("formRegistro","block");
+    cambiarDisplayClase("vistaCliente","none");
+    cambiarDisplayClase("vistaAdmin","none"); 
+    cambiarDisplayClase("preLogin","none"); 
+} */
 function registrar () {
     let id = sistema.clientes.length; 
     let nombreCliente = document.querySelector("#txtNombreCliente").value; 
@@ -81,13 +105,30 @@ function login() {
     let usuarioLogin = sistema.login(nombreUsuario, contrasenia, tipoUsuario);
 
     if (usuarioLogin != null && tipoUsuario === "C") {   
-        // MOSTRAR VISTA CLIENTE    
+        cambiarDisplayClase("vistaCliente","block");
+        cambiarDisplayClase("vistaAdmin","none"); 
+        cambiarDisplayClase("preLogin","none"); 
+        cambiarDisplayClase("formRegistro","none");
+        
     } else if (usuarioLogin != null && tipoUsuario === "A") {    
-         // MOSTRAR VISTA ADMIN   
+        cambiarDisplayClase("vistaCliente","none");
+        cambiarDisplayClase("vistaAdmin","block");
+        cambiarDisplayClase("preLogin","none");
+        cambiarDisplayClase("formRegistro","none");
+        
     } else {
         pMostrarMensajeLogin.innerHTML = "Información inválida: Usuario no encontrado";
     }
 }
+
+function cerrarSesion(){
+    cambiarDisplayClase("vistaCliente","none");
+    cambiarDisplayClase("vistaAdmin","none");
+    cambiarDisplayClase("preLogin","block");
+    cambiarDisplayClase("formRegistro","none");
+    sistema.cerrarSesion();
+} 
+
 
 
 

@@ -8,28 +8,48 @@
 </head>
 <body>
     <div id="contenedor">
+      <header>
+        <img id="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBRWovuUPFEU2kx5mlt5sjfigAccmFr8Jq8w&s" alt="logo" />
+        <nav class="vistaCliente seccion" >
+          <ul id="navPrincipal">
+            <li>
+              <a>Destinos</a>
+            </li>
+            <li>
+              <a>Ofertas</a>
+            </li>
+            <li>
+              <a>Mis reservas</a>
+            </li>
+            <li id="btnCerrarSesion">
+              <a>Cerrar sesión</a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="vistaAdmin seccion">
+          <ul id="navPrincipal">
+            <li>
+              <a>Agregar destino</a>
+            </li>
+            <li>
+              <a>Modificar destinos</a>
+            </li>
+            <li>
+              <a>Gestionar reservas</a>
+            </li>
+            <li>
+              <a>Informe de gancias</a> <br>
+            </li>
+            <li id="btnCerrarSesion">
+              <a>Cerrar sesión</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
         <!-- FIN CABEZAL -->
         <!-- REGISTRO -->
         <main>
-            <section id="secRegistroUsuario" class="preLogin">
-                <h2>Registrarse</h2>
-                <label for="txtNombreCliente">Nombre</label>
-                <input type="text" id="txtNombreCliente" >
-                <label for="txtApellidoCliente">Apellido</label>
-                <input type="text" id="txtApellidoCliente">
-                <label for="txtNombreUsuario">Nombre de usuario:</label>
-                <input type="text" id="txtNombreUsuario">
-                <label for="txtContrasenaRegistro">Contraseña</label>
-                <input type="text" id="txtContrasenaRegistro" />
-                <label for="txtNumeroTarjeta">Numero de tarjeta de credito</label>
-                <input type="number" id="txtNumeroTarjeta"> 
-                <label for="txtNumeroCVC">CVC</label>
-                <input type="number" id="txtNumeroCVC">
-                <input type="button" id="btnRegistroUsuario" value="Registrarme">
-                <p id="pMostrarMensajeRegistro"></p> 
-                <br>
-            </section>
-
+            
             <!-- LOGIN -->
             <section id="secLoginUsuario" class="preLogin">
                 <h2>Iniciar sesión</h2>
@@ -45,9 +65,27 @@
                 </select>
                 <p id="pMostrarMensajeLogin"></p>
                 <input type="button" id="btnLoginUsuario" value="Ingresar">
-                <a href="" id="btnGenerarRegistro">Registrarme</a>
+                <a href="" id="btnMostrarRegistro">Registrarme</a>
                 <br>
             </section>
+            <section id="secRegistroUsuario" class="formRegistro" >
+              <h2>Registrarse</h2>
+              <label for="txtNombreCliente">Nombre</label>
+              <input type="text" id="txtNombreCliente" >
+              <label for="txtApellidoCliente">Apellido</label>
+              <input type="text" id="txtApellidoCliente">
+              <label for="txtNombreUsuario">Nombre de usuario:</label>
+              <input type="text" id="txtNombreUsuario">
+              <label for="txtContrasenaRegistro">Contraseña</label>
+              <input type="text" id="txtContrasenaRegistro" />
+              <label for="txtNumeroTarjeta">Numero de tarjeta de credito</label>
+              <input type="number" id="txtNumeroTarjeta"> 
+              <label for="txtNumeroCVC">CVC</label>
+              <input type="number" id="txtNumeroCVC">
+              <input type="button" id="btnRegistroUsuario" value="Registrarme">
+              <p id="pMostrarMensajeRegistro"></p> 
+              <br>
+          </section>
 
 
 
