@@ -5,9 +5,10 @@ class Sistema{
         this.reservas = []; 
         this.destinos = []; 
         this.precargarClientes(); 
-       // this.precargarDestinos(); 
+        this.precargarDestinos(); 
         this.precargarAdmins(); 
         this.usuarioLogueado = null;
+
     }
 //METODOS
     precargarClientes() {
@@ -24,6 +25,11 @@ class Sistema{
 
         this.administradores.push(adminUno,adminDos)
     }
+    precargarDestinos(){
+        let destinoUno = new Destino 
+    }
+
+    // nombre,descripcion,precioPersona,imagen,cupos,estado,enOferta
 
     // FUNCIONES
 
@@ -50,9 +56,13 @@ class Sistema{
             i++;
         }
         return usuario; 
-}
+    }
+
+    cerrarSesion(){
+        this.usuarioLogueado = null; 
+    } 
       
-  registrarCliente (id,nombreCliente,apellidoCliente,nombreUsuarioCliente,contrasenia,numTarjeta,cvc,saldo,millas){
+    registrarCliente (id,nombreCliente,apellidoCliente,nombreUsuarioCliente,contrasenia,numTarjeta,cvc,saldo,millas){
         let seCreoElCliente = false;
         let clienteEsUnico = this.clienteEsUnico(nombreUsuarioCliente)
         if(clienteEsUnico){
@@ -75,3 +85,4 @@ class Sistema{
     }
 
 }
+
