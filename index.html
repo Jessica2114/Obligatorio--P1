@@ -10,9 +10,10 @@
     <div id="contenedor">
       <header>
         <img id="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBRWovuUPFEU2kx5mlt5sjfigAccmFr8Jq8w&s" alt="logo" />
+        <!-- BARRA NAVEGACIÓN CLIENTE -->
         <nav class="vistaCliente seccion" >
           <ul id="navPrincipal">
-            <li>
+            <li id="btnVerDestinos" data-refSec="secVerDestinos" class="btnSeccion seccion">
               <a>Destinos</a>
             </li>
             <li>
@@ -26,6 +27,7 @@
             </li>
           </ul>
         </nav>
+        <!-- BARRA NAVEGACIÓN ADMIN -->
         <nav class="vistaAdmin seccion">
           <ul id="navPrincipal">
             <li>
@@ -47,9 +49,8 @@
         </nav>
       </header>
         <!-- FIN CABEZAL -->
-        <!-- REGISTRO -->
+       
         <main>
-            
             <!-- LOGIN -->
             <section id="secLoginUsuario" class="preLogin">
                 <h2>Iniciar sesión</h2>
@@ -68,6 +69,7 @@
                 <a href="" id="btnMostrarRegistro">Registrarme</a>
                 <br>
             </section>
+             <!-- REGISTRO -->
             <section id="secRegistroUsuario" class="formRegistro" >
               <h2>Registrarse</h2>
               <label for="txtNombreCliente">Nombre</label>
@@ -87,6 +89,25 @@
               <br>
           </section>
 
+          <section id="secVerDestinos" class="seccion">
+            <h2>Destinos disponibles:</h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Precio</th>
+                        <th>Imagen</th>
+                        <th>En oferta</th>
+                    </tr>
+                </thead>
+                <tbody id="tblMostrarDestinos">
+
+                </tbody>
+                
+            </table>
+            
+          </section>
 
 
         </main>
