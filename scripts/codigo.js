@@ -112,8 +112,6 @@ function registrar () {
 
     
 }
-
-
 // LOGIN 
 
 function login() {
@@ -149,6 +147,87 @@ function cerrarSesion(){
     sistema.cerrarSesion();
 } 
 
+//<!--******************* CLIENTE******************** -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// <!--******************* ADMINISTRADOR******************** -->
 
 // DESTINOS //
 
