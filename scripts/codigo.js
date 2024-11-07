@@ -3,16 +3,44 @@ let sistema = new Sistema();
 // EVENTOS CLICK
 document.querySelector("#btnLoginUsuario").addEventListener("click", login);
 document.querySelector("#btnRegistroUsuario").addEventListener("click",registrar);
-document.querySelector("#btnCerrarSesion").addEventListener("click",cerrarSesion);
-// document.querySelector("#btnMostrarRegistro").addEventListener("click",mostrarFormRegistro )
+document.querySelector("#bntAgregarDestino").addEventListener("click",agregarDestino);
+document.querySelector("#btnMostrarRegistro").addEventListener("click",mostrarRegistro); 
 
-// OCULTAR / MOSTRAR 
+// OCULTAR / MOSTRAR
 
+let btnSecciones = document.querySelectorAll(".btnSeccion")
+for(let boton of btnSecciones){
+    boton.addEventListener("click", mostrarSeccion)
+}
 
-ocultarSecciones(); 
+let btnCerrarSesion  = document.querySelectorAll(".btnCerrarSesion")
+for(let boton of btnCerrarSesion){
+    boton.addEventListener("click",cerrarSesion)
+}
+function mostrarSeccion(){
+    ocultarSecciones();
+    let idSeccion = this.getAttribute("data-refSec")
+    document.querySelector(`#${idSeccion}`).style.display = "block"
+}
+
+ocultarSecciones();
+ocultarSeccionesNav();  
+
+function mostrarRegistro() {
+    cambiarDisplayClase("preLogin","none");
+    cambiarDisplayClase("formRegistro","block");
+    
+}
 
 function ocultarSecciones(){
     let secciones = document.querySelectorAll(".seccion")
+    for(let seccion of secciones){
+        seccion.style.display = "none"
+    }
+}
+
+function ocultarSeccionesNav(){
+    let secciones = document.querySelectorAll(".seccionNav")
     for(let seccion of secciones){
         seccion.style.display = "none"
     }
@@ -25,14 +53,6 @@ function cambiarDisplayClase(clase,display){
     }
 }
 
-
-/* REGISTRO */
-/* function mostrarFormRegistro (){
-    cambiarDisplayClase("formRegistro","block");
-    cambiarDisplayClase("vistaCliente","none");
-    cambiarDisplayClase("vistaAdmin","none"); 
-    cambiarDisplayClase("preLogin","none"); 
-} */
 function registrar () {
     let id = sistema.clientes.length; 
     let nombreCliente = document.querySelector("#txtNombreCliente").value; 
@@ -122,16 +142,37 @@ function login() {
 }
 
 function cerrarSesion(){
-    cambiarDisplayClase("vistaCliente","none");
-    cambiarDisplayClase("vistaAdmin","none");
     cambiarDisplayClase("preLogin","block");
     cambiarDisplayClase("formRegistro","none");
+    ocultarSecciones();
+    ocultarSeccionesNav() 
     sistema.cerrarSesion();
 } 
 
 
+// DESTINOS //
 
+function agregarDestino (){
+    let nombreNuevoDestino = document.querySelector("#txtNombreNuevoDestino").value; 
+    let descripcionNuevoDestino = document.querySelector("#txtDescripcionNuevoDestino").value; 
+    let precioPorPersonaNuevoDestino = Number(document.querySelector("#txtPrecioPorPersonaNuevoDestino").value); 
+    let img = document.querySelector("#imgNuevoDestino").files[0].name; 
+    let cuposNuevoDestino = Number(document.querySelector("#txtCuposNuevoDestino").value);
+    let estadoDestino = "Activo";
+    let enOfertaNuevoDestino =  document.querySelector("#slcEnOfertaNuevoDestino").value; 
+    let mensajeAgregarDestino = document.querySelector("#pMensajeAgregarDestino")
+    
 
+    let seCreoDestino = sistema.agregarDestino(nombreNuevoDestino,descripcionNuevoDestino,precioPorPersonaNuevoDestino,img,cuposNuevoDestino,estadoDestino,enOfertaNuevoDestino);
+
+    if(seCreoDestino){
+        mensajeAgregarDestino.innerHTML = "Se creó el destino"
+    }else{
+        mensajeAgregarDestino.innerHTML = "No se creó el destino"
+    }
+}
+
+//nombre,descripcion,precioPersona,imagen,cupos,estado,enOferta
 
 
 

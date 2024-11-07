@@ -26,10 +26,11 @@ class Sistema{
         this.administradores.push(adminUno,adminDos)
     }
     precargarDestinos(){
-        let destinoUno = new Destino 
+        let destinoUno = new Destino("Salta", "Argentina",25000,"Imagen",10,"Activo",false);
+        let destinoDos = new Destino("Jujuy", "Argentina",30000,"Imagen",15,"Activo",false);
+        
+        this.destinos.push(destinoUno,destinoDos);
     }
-
-    // nombre,descripcion,precioPersona,imagen,cupos,estado,enOferta
 
     // FUNCIONES
 
@@ -83,6 +84,19 @@ class Sistema{
         }
         return unico;
     }
+
+    // AGREGAR DESTINOS ***** 
+    agregarDestino(nombre,descripcion,precioPersona,nombreImg,cupos,estado,enOferta){
+        let seCreoDestino = false; 
+        if(!seCreoDestino){
+            let imgen = "../img/" + nombreImg;
+            let destino = new Destino(nombre,descripcion,precioPersona,nombreImg,cupos,estado,enOferta);
+            this.destinos.push(destino);
+            seCreoDestino = true; 
+        }
+        return seCreoDestino;
+    }
+    
 
 }
 

@@ -3,7 +3,7 @@ class Destino {
         this.nombre = nombre; 
         this.descripcion = descripcion; 
         this.precioPersona = precioPersona; 
-        this.imagen = imagen; 
+        this.imagen = //"../imgs/img-jujuy.jpg" 
         this.cupos = cupos; 
         this.estado = estado; 
         this.enOferta = enOferta; 
