@@ -12,8 +12,8 @@
         <img id="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBRWovuUPFEU2kx5mlt5sjfigAccmFr8Jq8w&s" alt="logo" />
         <nav class="vistaCliente seccionNav" >
           <ul id="navPrincipal">
-            <li >
-              <a>Destinos</a>
+            <li id="btnVerDestinos" data-refSec="secVerDestinos" class="btnSeccion">
+              <a>Explorar Destinos</a>
             </li>
             <li>
               <a>Ofertas</a>
@@ -88,9 +88,39 @@
               <p id="pMostrarMensajeRegistro"></p> 
               <br>
           </section>
+          <section id="secVerDestinos" class="seccion">
+            <h2>Destinos disponibles:</h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Precio</th>
+                        <th>Imagen</th>
+                        <th>En oferta</th>
+                    </tr>
+                </thead>
+                <tbody id="tblMostrarDestinos">
+                  
+                </tbody>
+            </table>
+          </section>
 
-          
-
+          <section id="secReservarDestino" class="seccion confirmarReserva">
+            <h1 id="nombreDestinoAReservar"></h1>
+            <img src="img/img-jujuy.jpg" alt="destinos a reservar"> <br>
+            <p id="descripcionYPrecioDestino">Descripción + Precio $</p>
+            <label for="txtCantCupos">Cantidad de personas</label> <br>
+            <input type="number" id="txtCantCupos">
+            <label for="slcMetodoPago">Seleccionar metodo de pago</label>
+            <select id="slcMetodoPago">
+              <option value="#">Seleccionar...</option>
+              <option value="D">Dinero </option>
+              <option value="M">Millas</option>
+            </select>
+            <br>
+            <input type="button" id="btnConfirmarReservaDestino" value="Confirmar reserva" />
+          </section>
 
 
 

@@ -87,8 +87,31 @@ class Sistema{
 
     //   <!--******************* CLIENTE******************** -->
     
+    validarReservaExistente(nombreDestino){
+        let clienteYaReservoDestino = false;
+        let cliente = sistema.usuarioLogueado.id
+        let i = 0;
+        while(i < sistema.reservas.length && !clienteYaReservoDestino){
+            let reserva = sistema.reservas[i]
+            if(reserva.idCliente === cliente && reserva.nombreDestino === nombreDestino && reserva.estado === "Pendiente"){
+                clienteYaReservoDestino = true;
+            }
+            i++
+        }
+        return clienteYaReservoDestino
+    }
     
-    
+    reservarDestino(idCliente,nombreDestino,cuposReservados,montoTotal,formaPago,estado){
+        let reservaConcretada = false;
+        
+        if(!reservaConcretada){
+            let reserva =  new Reserva (idCliente,nombreDestino,cuposReservados,montoTotal,formaPago,estado);
+            this.reservas.push(reserva);
+            reservaConcretada = true;
+        }
+        return reservaConcretada;
+        
+    }
     
     
     
