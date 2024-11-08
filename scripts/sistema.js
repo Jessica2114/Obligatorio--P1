@@ -26,8 +26,8 @@ class Sistema{
         this.administradores.push(adminUno,adminDos)
     }
     precargarDestinos(){
-        let destinoUno = new Destino("Salta", "Argentina",25000,"Imagen",10,"Activo",false);
-        let destinoDos = new Destino("Jujuy", "Argentina",30000,"Imagen",15,"Activo",false);
+        let destinoUno = new Destino("Salta", "Argentina",25000,"Imagen",10,true,false);
+        let destinoDos = new Destino("Jujuy", "Argentina",30000,"Imagen",15,true,false);
         
         this.destinos.push(destinoUno,destinoDos);
     }

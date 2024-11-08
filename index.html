@@ -266,7 +266,7 @@
           <section id="secAgregarDestino" class="seccion">
             <h2>Agregar nuevo destino</h2>
             <label for="txtNombreNuevoDestino">Nombre del destino</label> <br>
-            <input type="text" id="txtNombreNuevoDestino">
+            <input type="text" id="txtNombreNuevoDestino" >
             <label for="txtDescripcionNuevoDestino">Descripción</label> <br>
             <input type="text" id="txtDescripcionNuevoDestino">
             <label for="txtPrecioPorPersonaNuevoDestino">Precio por persona</label> <br>
@@ -289,19 +289,17 @@
             <table border="1">
               <thead>
                 <tr>
-                  <th></th>
-                  <th>Matricula</th>
-                  <th>Marca</th>
-                  <th>Modelo</th>
-                  <th>Color</th>
-                  <th>Año</th>
-                  <th>Patente al dia</th>
+                  <th>Destino</th>
+                  <th>Cupos actuales</th>
+                  <th>Cant cupos</th>
+                  <th>Estado actual</th>
+                  <th>Nuevo estado</th>
+                  <th>En oferta</th>
                 </tr>
               </thead>
-              <tbody id="tblBodyVehiculos"></tbody>
+              <tbody id="tblBodyAdministrarDestinos"></tbody>
             </table>
           </section>
-
         </main>
     </div>
     <script src="./scripts/sistema.js"></script>
