@@ -127,6 +127,7 @@ function login() {
         cambiarDisplayClase("vistaAdmin","none"); 
         cambiarDisplayClase("preLogin","none"); 
         cambiarDisplayClase("formRegistro","none");
+        mostrarTablaDestinos();
         
     } else if (usuarioLogin != null && tipoUsuario === "A") {    
         cambiarDisplayClase("vistaCliente","none");
@@ -148,7 +149,57 @@ function cerrarSesion(){
 } 
 
 //<!--******************* CLIENTE******************** -->
+function mostrarTablaDestinos(){
+    document.querySelector("#tblMostrarDestinos").innerHTML = "";
+    for(let i = 0; i < sistema.destinos.length; i++){
+        let destino = sistema.destinos[i]
+        let reservaYaExistente = sistema.validarReservaExistente(destino.nombre)
+        if(destino.estado === "Activo" && destino.cupos > 0 && !reservaYaExistente){
+            document.querySelector("#tblMostrarDestinos").innerHTML += `
+            <tr>
+                <td>${destino.nombre}</td>
+                <td>${destino.descripcion}</td>
+                <td>${destino.precioPersona}</td>
+                <td>${destino.imagen}</td>
+                <td>${destino.enOferta}</td>
+                <td><input type="button" value="Reservar" id="btnReservarDestino" data-refSec="secReservarDestino" data-destino="${destino.nombre}"></td>
+            </tr>`
+            document.querySelector("#btnReservarDestino").addEventListener("click", mostrarSeccion)
+           //document.querySelector("#btnReservarDestino").addEventListener("click", mostrarConfirmacionReserva(destino.nombre, destino.descripcion));
 
+        }else if(destino.estado === "Activo" && destino.cupos > 0 && reservaYaExistente){
+        document.querySelector("#tblMostrarDestinos").innerHTML += `
+            <tr>
+                <td>${destino.nombre}</td>
+                <td>${destino.descripcion}</td>
+                <td>${destino.precioPersona}</td>
+                <td>${destino.imagen}</td>
+                <td>${destino.enOferta}</td>
+                <td>YA RESERVADO</td>
+            </tr>`
+    }
+}
+
+}
+
+function mostrarConfirmacionReserva(titulo, descripcion){
+    document.querySelector("#nombreDestinoAReservar").innerHTML = titulo;
+    document.querySelector("#descripcionYPrecioDestino").innerHTML = descripcion;
+    ocultarSecciones()
+    cambiarDisplayClase("confirmarReserva", "block")
+
+
+}
+
+document.querySelector("#btnConfirmarReservaDestino").addEventListener("click", confirmarReservaDestino());
+
+function confirmarReservaDestino(){
+    let cantCuposAReservar = Number(document.querySelector("#txtCantCupos").value);
+    let idCliente = sistema.usuarioLogueado.id
+    let nombreDestino 
+
+    sistema.reservarDestino()
+}
 
 
 
