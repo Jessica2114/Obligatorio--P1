@@ -191,7 +191,7 @@ function mostrarConfirmacionReserva(titulo, descripcion){
 
 }
 
-/* document.querySelector("#btnConfirmarReservaDestino").addEventListener("click", confirmarReservaDestino());
+document.querySelector("#btnConfirmarReservaDestino").addEventListener("click", confirmarReservaDestino());
 
 function confirmarReservaDestino(){
     let cantCuposAReservar = Number(document.querySelector("#txtCantCupos").value);
@@ -199,7 +199,7 @@ function confirmarReservaDestino(){
     let nombreDestino 
 
     sistema.reservarDestino()
-} */
+} 
 
 
 
