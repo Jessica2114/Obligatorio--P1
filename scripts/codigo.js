@@ -149,7 +149,7 @@ function cerrarSesion(){
 } 
 
 //<!--******************* CLIENTE******************** -->
-function mostrarTablaDestinos(){
+function mostrarTablaDestinos(){ 
     document.querySelector("#tblMostrarDestinos").innerHTML = "";
     for(let i = 0; i < sistema.destinos.length; i++){
         let destino = sistema.destinos[i]
@@ -191,7 +191,7 @@ function mostrarConfirmacionReserva(titulo, descripcion){
 
 }
 
-document.querySelector("#btnConfirmarReservaDestino").addEventListener("click", confirmarReservaDestino());
+/* document.querySelector("#btnConfirmarReservaDestino").addEventListener("click", confirmarReservaDestino());
 
 function confirmarReservaDestino(){
     let cantCuposAReservar = Number(document.querySelector("#txtCantCupos").value);
@@ -199,7 +199,7 @@ function confirmarReservaDestino(){
     let nombreDestino 
 
     sistema.reservarDestino()
-}
+} */
 
 
 
@@ -288,21 +288,57 @@ function agregarDestino (){
     let precioPorPersonaNuevoDestino = Number(document.querySelector("#txtPrecioPorPersonaNuevoDestino").value); 
     let img = document.querySelector("#imgNuevoDestino").files[0].name; 
     let cuposNuevoDestino = Number(document.querySelector("#txtCuposNuevoDestino").value);
-    let estadoDestino = "Activo";
+    let estadoDestino = true;
     let enOfertaNuevoDestino =  document.querySelector("#slcEnOfertaNuevoDestino").value; 
     let mensajeAgregarDestino = document.querySelector("#pMensajeAgregarDestino")
     
-
-    let seCreoDestino = sistema.agregarDestino(nombreNuevoDestino,descripcionNuevoDestino,precioPorPersonaNuevoDestino,img,cuposNuevoDestino,estadoDestino,enOfertaNuevoDestino);
+    if(nombreNuevoDestino === "" || 
+        descripcionNuevoDestino === "" || 
+        precioPorPersonaNuevoDestino === "" ||
+        cuposNuevoDestino === "" || 
+        enOfertaNuevoDestino === "" ||
+        enOfertaNuevoDestino=== ""){
+        mensajeAgregarDestino.innerHTML = "Debe completar todos los campos"
+    } else {
+        let seCreoDestino = sistema.agregarDestino(nombreNuevoDestino,descripcionNuevoDestino,precioPorPersonaNuevoDestino,img,cuposNuevoDestino,estadoDestino,enOfertaNuevoDestino);
 
     if(seCreoDestino){
         mensajeAgregarDestino.innerHTML = "Se creó el destino"
     }else{
         mensajeAgregarDestino.innerHTML = "No se creó el destino"
     }
+    }
+
+    
 }
 
-//nombre,descripcion,precioPersona,imagen,cupos,estado,enOferta
+mostrarTablaDestinosAdministrador () 
+function mostrarTablaDestinosAdministrador () {
+    document.querySelector("#tblBodyAdministrarDestinos").innerHTML = "";
+    for(let i= 0; i<sistema.destinos.length; i++){
+        let destino = sistema.destinos[i];
+            document.querySelector("#tblBodyAdministrarDestinos").innerHTML += 
+            `<tr>
+            <td>${destino.nombre}</td>
+            <td>${destino.cupos}</td>
+            <td><input type="number" id="txtModificarCupos"></td>
+            <td>${destino.destinoEstado()}</td>
+            <td><select id="slcModificarEstadoDestino">
+                    <option value="Activo">Activo</option>
+                    <option value="Inactivo">Inactivo</option>
+                </select>
+            </td>
+            <td>${destino.destinoEnOferta()}</td>
+            <td><select id="slcModificarEnOfertaDestino">
+                    <option value="S">Si</option>
+                    <option value="N">No</option>
+                </select></td>
+            <td><input type="button" value="Modificar"></td>
+            </tr>
+            `
+        }
+       
+}
 
 
 

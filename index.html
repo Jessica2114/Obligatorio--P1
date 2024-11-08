@@ -31,7 +31,7 @@
             <li id="mostrarAgregarDestinos" data-refSec="secAgregarDestino" class="btnSeccion">
               <a>Agregar destino</a>
             </li>
-            <li>
+            <li id="mostrarModificarDestino" data-refSec="secModificarDestino" class="btnSeccion">
               <a>Modificar destinos</a>
             </li>
             <li>
@@ -261,10 +261,12 @@
 
 
           <!--******************* ADMINISTRADOR******************** -->
+          
+          <!--AGREGAR DESTINOS -->
           <section id="secAgregarDestino" class="seccion">
             <h2>Agregar nuevo destino</h2>
             <label for="txtNombreNuevoDestino">Nombre del destino</label> <br>
-            <input type="text" id="txtNombreNuevoDestino">
+            <input type="text" id="txtNombreNuevoDestino" >
             <label for="txtDescripcionNuevoDestino">Descripción</label> <br>
             <input type="text" id="txtDescripcionNuevoDestino">
             <label for="txtPrecioPorPersonaNuevoDestino">Precio por persona</label> <br>
@@ -282,7 +284,22 @@
             <p id="pMensajeAgregarDestino"></p>
           </section>
 
-
+          <!-- MODIFICAR DESTINOS -->
+          <section  id="secModificarDestino" class="seccion">
+            <table border="1">
+              <thead>
+                <tr>
+                  <th>Destino</th>
+                  <th>Cupos actuales</th>
+                  <th>Cant cupos</th>
+                  <th>Estado actual</th>
+                  <th>Nuevo estado</th>
+                  <th>En oferta</th>
+                </tr>
+              </thead>
+              <tbody id="tblBodyAdministrarDestinos"></tbody>
+            </table>
+          </section>
         </main>
     </div>
     <script src="./scripts/sistema.js"></script>
