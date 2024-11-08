@@ -31,7 +31,7 @@
             <li id="mostrarAgregarDestinos" data-refSec="secAgregarDestino" class="btnSeccion">
               <a>Agregar destino</a>
             </li>
-            <li>
+            <li id="mostrarModificarDestino" data-refSec="secModificarDestino" class="btnSeccion">
               <a>Modificar destinos</a>
             </li>
             <li>
@@ -231,6 +231,8 @@
 
 
           <!--******************* ADMINISTRADOR******************** -->
+          
+          <!--AGREGAR DESTINOS -->
           <section id="secAgregarDestino" class="seccion">
             <h2>Agregar nuevo destino</h2>
             <label for="txtNombreNuevoDestino">Nombre del destino</label> <br>
@@ -252,6 +254,23 @@
             <p id="pMensajeAgregarDestino"></p>
           </section>
 
+          <!-- MODIFICAR DESTINOS -->
+          <section  id="secModificarDestino" class="seccion">
+            <table border="1">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Matricula</th>
+                  <th>Marca</th>
+                  <th>Modelo</th>
+                  <th>Color</th>
+                  <th>Año</th>
+                  <th>Patente al dia</th>
+                </tr>
+              </thead>
+              <tbody id="tblBodyVehiculos"></tbody>
+            </table>
+          </section>
 
         </main>
     </div>
