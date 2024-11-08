@@ -109,7 +109,9 @@
           <section id="secReservarDestino" class="seccion confirmarReserva">
             <h1 id="nombreDestinoAReservar"></h1>
             <img src="img/img-jujuy.jpg" alt="destinos a reservar"> <br>
-            <p id="descripcionYPrecioDestino">Descripción + Precio $</p>
+            <p id="descripcionDestino"></p>
+            <label for="precioPorPersonaDestino">El precio por persona es:</label>
+            <p id="precioPorPersonaDestino"></p>
             <label for="txtCantCupos">Cantidad de personas</label> <br>
             <input type="number" id="txtCantCupos">
             <label for="slcMetodoPago">Seleccionar metodo de pago</label>
@@ -118,8 +120,10 @@
               <option value="D">Dinero </option>
               <option value="M">Millas</option>
             </select>
+            <p id="cantMillasDisponibles"></p>
             <br>
             <input type="button" id="btnConfirmarReservaDestino" value="Confirmar reserva" />
+            <p id="reservaConfirmada"></p>
           </section>
 
 

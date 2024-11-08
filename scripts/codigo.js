@@ -162,11 +162,14 @@ function mostrarTablaDestinos(){
                 <td>${destino.precioPersona}</td>
                 <td>${destino.imagen}</td>
                 <td>${destino.enOferta}</td>
-                <td><input type="button" value="Reservar" id="btnReservarDestino" data-refSec="secReservarDestino" data-destino="${destino.nombre}"></td>
+                <td><input type="button" value="Reservar" class="btnReservarDestino" data-refSec="secReservarDestino" data-destinoNombre="${destino.nombre}"
+                data-destinoDescripcion="${destino.descripcion}" data-destinoPrecio="${destino.precioPersona}" >
+                </td>
             </tr>`
-            document.querySelector("#btnReservarDestino").addEventListener("click", mostrarSeccion)
-           //document.querySelector("#btnReservarDestino").addEventListener("click", mostrarConfirmacionReserva(destino.nombre, destino.descripcion));
-
+            botonesReservarDestino = document.querySelectorAll(".btnReservarDestino");
+            for(boton of botonesReservarDestino){
+            boton.addEventListener("click", mostrarConfirmacionReserva);
+            }
         }else if(destino.estado === "Activo" && destino.cupos > 0 && reservaYaExistente){
         document.querySelector("#tblMostrarDestinos").innerHTML += `
             <tr>
@@ -179,26 +182,58 @@ function mostrarTablaDestinos(){
             </tr>`
     }
 }
+    }
 
-}
+function mostrarConfirmacionReserva(){
+    let nombre = this.getAttribute("data-destinoNombre");
+    let descripcion = this.getAttribute("data-destinoDescripcion");
+    let precio = this.getAttribute("data-destinoPrecio");
 
-function mostrarConfirmacionReserva(titulo, descripcion){
-    document.querySelector("#nombreDestinoAReservar").innerHTML = titulo;
-    document.querySelector("#descripcionYPrecioDestino").innerHTML = descripcion;
+
+    document.querySelector("#nombreDestinoAReservar").innerHTML = nombre;
+    document.querySelector("#descripcionDestino").innerHTML = descripcion;
+    document.querySelector("#precioPorPersonaDestino").innerHTML = precio;
+
+
     ocultarSecciones()
     cambiarDisplayClase("confirmarReserva", "block")
+    pasarDatos(nombre, descripcion, precio)
 
 
 }
 
-document.querySelector("#btnConfirmarReservaDestino").addEventListener("click", confirmarReservaDestino());
+function pasarDatos(nombre, descripcion, precio){
+    let nombre = nombre
+    let descripcion = descripcion
+    let precio = precio
+
+    return nombre, descripcion, precio
+
+}
+
+document.querySelector("#btnConfirmarReservaDestino").addEventListener("click", confirmarReservaDestino);
 
 function confirmarReservaDestino(){
-    let cantCuposAReservar = Number(document.querySelector("#txtCantCupos").value);
-    let idCliente = sistema.usuarioLogueado.id
-    let nombreDestino 
+    let idCliente = sistema.usuarioLogueado.id;
+    let nombreDestino = document.querySelector("#nombreDestinoAReservar").value;
+    let cuposReservados = Number(document.querySelector("#txtCantCupos").value);
+    let precioPorPersona = Number(document.querySelector("#precioPorPersonaDestino").value);
+    let montoTotal = cuposReservados * precioPorPersona;
+    let formaPago = document.querySelector("#slcMetodoPago").value;
+    let estadoReserva = "Pendiente";
+    let millas = sistema.usuarioLogueado.millas
 
-    sistema.reservarDestino()
+    let pMostrarMillas = document.querySelector("#cantMillasDisponibles");
+
+    reservaConcretada = sistema.reservarDestino(idCliente, nombreDestino, cuposReservados, montoTotal, formaPago, estadoReserva)
+    if(reservaConcretada){
+        document.querySelector("#reservaConfirmada").innerHTML = `Su reserva se conretó con éxito`;
+        document.querySelector("#btnConfirmarReservaDestino").setAttribute('disabled', 'disabled')
+        mostrarTablaDestinos();
+
+    }
+
+    
 }
 
 
